@@ -1,3 +1,43 @@
+/* Font Family*/
+@font-face {
+    font-family: 'FreeSans';
+    src: url('assets/fonts/FreeSans.otf') format('opentype'),
+         url('assets/fonts/FreeSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FreeSans';
+    src: url('assets/fonts/FreeSansBold.otf') format('opentype'),
+         url('assets/fonts/FreeSansBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FreeSans';
+    src: url('assets/fonts/FreeSansBoldOblique.otf') format('opentype'),
+         url('assets/fonts/FreeSansBoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FreeSans';
+    src: url('assets/fonts/FreeSansOblique.otf') format('opentype'),
+         url('assets/fonts/FreeSansOblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Nimbus Sans Becker PBla Regular';
+    src: url('assets/fonts/Nimbus Sans Becker PBla Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Navbar styling */
 #navbar {
     display: flex; 
@@ -8,14 +48,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333;  
+    background-color: #FAFAFA;  
     padding: 10px 20px; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 9999; 
 }
 
 #navbar h1 {
+    font-family: 'FreeSans', sans-serif;
+    font-weight: bold;
+    font-style: normal;
     margin: 0; 
+    color: #4443FF; 
 }
 
 #navbar nav {
@@ -23,6 +67,9 @@
 }
 
 #navbar ul {
+    font-family: 'FreeSans', sans-serif;
+    font-weight: bold;
+    font-style: normal;
     list-style-type: none;
     display: flex; 
     padding: 0;
@@ -34,17 +81,17 @@
 }
 
 #navbar a {
-    color: white;
+    color: black;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 #navbar a:hover {
-    color: #27ae60; 
+    color: #4443FF; 
 }
 
 #navbar a.active {
-    border-bottom: 2px solid #27ae60; 
+    border-bottom: 2px solid #4443FF; 
 }
 
 /* Ensuring content starts after the navbar */
@@ -71,3 +118,11 @@ main {
         margin-top: 120px; /* Adjust for mobile, as navbar will be taller */
     }
 }
+
+body {
+    font-family: 'FreeSans', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background-color: #FAFAFA; 
+}
+
