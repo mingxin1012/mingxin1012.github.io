@@ -99,15 +99,78 @@ main {
     margin-top: 70px; /* adjust depending on the exact height of your navbar */
 }
 
-/* Making navbar mobile-friendly */
+
+
+body {
+    font-family: 'FreeSans', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background-color: #FAFAFA; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* This ensures that the main content grows to occupy all available space */
+    padding: 10px 20px;
+}
+
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start; /* This aligns the content at the top */
+    justify-content: space-between;
+}
+
+.text-content {
+    flex: 1 1 50%; /* This makes the text-content take up 60% of the width by default */
+}
+
+.image-content {
+    flex: 1 1 50%; /* This makes the image-content take up 40% of the width by default */
+    max-width: 50%; /* Makes sure the image container doesn't grow beyond 40% width */
+}
+
+.image-content img {
+    width: 100%; /* Ensures the image stretches and shrinks within its container */
+    height: auto;
+}
+
+
+/* grid in life.html */ 
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;  /* space between images */
+    padding: 20px;
+    box-sizing: border-box; /* makes sure the padding doesn't increase the box's size */
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* optional, if you want rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* optional, to add a slight shadow effect */
+}
+
+footer {
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+/* mobile-friendly */
 @media only screen and (max-width: 600px) {
+    /* make navbar mobile-friendly */
     #navbar {
-        flex-direction: column; /* Change flex direction for mobile */
+        flex-direction: column; 
         padding: 10px;
     }
 
     #navbar h1, #navbar ul {
-        text-align: center; /* Center-align for mobile */
+        text-align: center;
     }
 
     #navbar li {
@@ -117,12 +180,18 @@ main {
     main {
         margin-top: 120px; /* Adjust for mobile, as navbar will be taller */
     }
-}
 
-body {
-    font-family: 'FreeSans', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    background-color: #FAFAFA; 
-}
+    /* make image layout mobile friendly*/
+    .content-section {
+        flex-direction: column; 
+    }
 
+    .text-content, .image-content {
+        max-width: 100%;
+        flex-basis: 100%; /* Makes both text and image take up 100% of the width on smaller screens */
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
