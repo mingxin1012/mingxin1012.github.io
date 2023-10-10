@@ -1,0 +1,73 @@
+/* Navbar styling */
+#navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: fixed;
+    box-sizing: border-box; /*  include padding and border in the element's total width and height */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;  
+    padding: 10px 20px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 9999; 
+}
+
+#navbar h1 {
+    margin: 0; 
+}
+
+#navbar nav {
+    display: flex;
+}
+
+#navbar ul {
+    list-style-type: none;
+    display: flex; 
+    padding: 0;
+    margin: 0;
+}
+
+#navbar li {
+    margin-left: 20px; /* Space between links */
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#navbar a:hover {
+    color: #27ae60; 
+}
+
+#navbar a.active {
+    border-bottom: 2px solid #27ae60; 
+}
+
+/* Ensuring content starts after the navbar */
+main {
+    margin-top: 70px; /* adjust depending on the exact height of your navbar */
+}
+
+/* Making navbar mobile-friendly */
+@media only screen and (max-width: 600px) {
+    #navbar {
+        flex-direction: column; /* Change flex direction for mobile */
+        padding: 10px;
+    }
+
+    #navbar h1, #navbar ul {
+        text-align: center; /* Center-align for mobile */
+    }
+
+    #navbar li {
+        margin-top: 10px;
+    }
+
+    main {
+        margin-top: 120px; /* Adjust for mobile, as navbar will be taller */
+    }
+}
